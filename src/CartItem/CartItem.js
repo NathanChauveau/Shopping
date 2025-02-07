@@ -15,8 +15,6 @@ module.exports = class CartItem {
             throw new InvalidArticleIdException();
         }
         this._articleId = articleId;
-    
-
         this._name = name;
         this._quantity = quantity;
         this._price = price;
