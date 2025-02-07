@@ -1,3 +1,10 @@
+/**
+ * @name CartItemTest
+ * @desciption This class tests the CartItem class methods and constructor
+ * @author Nathan Chauveau
+ * @version 1.0
+ * @date 07/02/2025
+ */
 "use strict";
 
 let CartItem =  require('../src/CartItem/CartItem.js');

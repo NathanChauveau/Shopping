@@ -1,3 +1,11 @@
+/**
+ * @name CartItem
+ * @desciption This class represents a cart item
+ * @author Nathan Chauveau
+ * @version 1.0
+ * @date 07/02/2025
+ */
+
 "use strict";
 
 const InvalidArticleIdException = require("./InvalidArticleIdException.js");
