@@ -51,7 +51,7 @@ module.exports = class CartItem {
         if(value < 10) {
             throw new InvalidPriceException();
         }
-       this._price = value;
+        this._price = value;
     }
 
     get total() {
