@@ -1,11 +1,9 @@
 @startuml
 class CartItem {
     name : string
+    article : int
     quantity : int
     price : double
     total : double
 }
-
-
-
 @enduml
