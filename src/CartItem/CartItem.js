@@ -37,6 +37,9 @@ module.exports = class CartItem {
     }
 
     set quantity(value) {
+        if(value < 1) {
+            throw new InvalidQuantityException();
+        }
         this._quantity = value;
     }
 
