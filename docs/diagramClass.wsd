@@ -1,4 +1,4 @@
-@startuml
+@startuml Shopping
 class CartItem {
     name : string
     article : int
