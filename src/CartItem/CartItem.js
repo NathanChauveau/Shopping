@@ -48,7 +48,7 @@ module.exports = class CartItem {
     }
 
     set price(value) {
-       this.price = value;
+       this._price = value;
     }
 
     get total() {
