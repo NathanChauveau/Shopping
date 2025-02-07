@@ -11,10 +11,13 @@ module.exports = class CartItem {
 
     //region public methods
     constructor(articleId, name, quantity, price) {
-    this._articleId = articleId;
-    this._name = name;
-    this._quantity = quantity;
-    this._price = price;
+        if (articleId < 1) {
+            throw new InvalidArticleIdException();
+        }
+        this._articleId = articleId;
+        this._name = name;
+        this._quantity = quantity;
+        this._price = price;
     }
 
     get articleId() {
