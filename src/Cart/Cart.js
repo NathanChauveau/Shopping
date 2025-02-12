@@ -35,7 +35,7 @@ module.exports = class Cart {
         this._cartItems = value;
     }
     get total() {
-        if(this._cartItems.length === 0) {
+        if(this._cartItems === null) {
             throw new EmptyCartException();
         }
         let total = 0;
