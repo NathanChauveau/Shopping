@@ -13,8 +13,9 @@ class CartItem{
 class Cart{
     +Cart(cartItems: CartItem[])
     +<get,set>cartItems():CartItem[]
-    +<get>total():float1
-    
+    +<get>total():float
+    +count(distinct = false):int
+    +add(cartItem: CartItem):void
 }
 
 
