@@ -66,5 +66,12 @@ module.exports = class Cart {
         }
       
     }
+
+    add(cartItem) {
+        if(this._cartItems === null) {
+            this._cartItems = [];
+        }
+        this._cartItems.push(cartItem);
+    }
     
 }
