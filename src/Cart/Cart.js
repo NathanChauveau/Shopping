@@ -44,4 +44,9 @@ module.exports = class Cart {
         });
         return total;
     }
+
+    count(){
+        return this._cartItems.length;
+    }
+    
 }
