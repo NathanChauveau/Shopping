@@ -71,6 +71,9 @@ module.exports = class Cart {
         if(this._cartItems === null) {
             this._cartItems = [];
         }
+        if(cartItem === null) {
+            throw new UpdateCartException();
+        }
         this._cartItems.push(cartItem);
     }
     
