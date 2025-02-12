@@ -46,6 +46,9 @@ module.exports = class Cart {
     }
 
     count(distinct = false) {
+        if(this._cartItems === null) {
+            throw new EmptyCartException();
+        }
         if(distinct){
             let distinctItems = [];
             this._cartItems.forEach(cartItem => {
