@@ -1,8 +1,47 @@
-@startuml Shopping
-class CartItem {
-    name : string
-    quantity : int
-    price : double
-    total : double
+@startuml
+
+left to right direction
+skinparam classAttributeIconSize 0
+
+'Classes declaration
+class CartItem{
+   +CartItem(articleId: int, name: string, quantity: int, price: float)
+   +<get,set>quantity():int
+   +<get>name():string
+   +<get>price():float
 }
+class Cart{
+    +Cart(cartItems: CartItem[])
+    +<get,set>cartItems():CartItem[]
+    +<get>total():float1
+    
+}
+
+
+class Error{}
+class CartItemException{}
+class InvalidArticleIdException{}
+class InvalidQuantityException{}
+class InvalidPriceException{}
+class EmptyCartException{}
+class UpdateCartException{}
+class CartException{}
+
+'Relations
+CartItem --> InvalidArticleIdException
+CartItem --> InvalidQuantityException : throws
+CartItem --> InvalidPriceException : throws
+Cart --> EmptyCartException : throws
+Cart --> UpdateCartException : throws
+Cart o-- CartItem
+
+'Exception inheritance
+InvalidArticleIdException -|> CartItemException
+InvalidPriceException -|> CartItemException
+InvalidQuantityException -|> CartItemException
+CartItemException -|> Error
+EmptyCartException -|> CartException
+UpdateCartException -|> CartException
+CartException -|> Error
+
 @enduml
