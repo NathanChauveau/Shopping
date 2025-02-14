@@ -15,7 +15,6 @@ module.exports = class Cart {
 
     //region private attributes
     //endregion private attributes
-
     //region public methods
 
     constructor(cartItems) {
@@ -28,12 +27,7 @@ module.exports = class Cart {
         }
         return this._cartItems;
     }
-    set items(value) {
-        if(value.length === 0) {
-            throw new EmptyCartException();
-        }
-        this._cartItems = value;
-    }
+
     get total() {
         if(this._cartItems === null) {
             throw new EmptyCartException();
@@ -49,12 +43,13 @@ module.exports = class Cart {
         if(this._cartItems === null) {
             throw new EmptyCartException();
         }
+
         if(distinct){
             let distinctItems = [];
             this._cartItems.forEach(cartItem => {
-                if(!distinctItems.includes(cartItem.articleId)){
+                //if(!distinctItems.includes(cartItem.articleId)){
                     distinctItems.push(cartItem.articleId);
-                }
+                //}
             });
             return distinctItems.length;
         }else{
@@ -64,17 +59,15 @@ module.exports = class Cart {
             });
             return totalQuantity;
         }
-      
     }
 
     add(cartItem) {
-        if(this._cartItems === null) {
+        //if(this._cartItems === null) {
             this._cartItems = [];
-        }
-        if(cartItem === null || cartItem.quantity < 1) {
+        //}
+        if(cartItem === null ) {
             throw new UpdateCartException();
         }
         this._cartItems.push(cartItem);
     }
-    
 }

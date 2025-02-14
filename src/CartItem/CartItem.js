@@ -36,10 +36,6 @@ module.exports = class CartItem {
         return this._articleId;
     }
 
-    get name() {
-        return this._name;
-    }
-
     get quantity() {
         return this._quantity;
     }
