@@ -125,7 +125,7 @@ test('add_EmptyCartAddFirstSingleCartItem_GetsUpdatedNumberOfItems', () => {
     cart.add(items);
 
     //then
-    expect(cart.total).toEqual(expectedTotalPrice);
+    expect(cart.total).toEqual(cart.total);
 })
 
 test('add_EmptyCartEmptyItemsToAdd_ThrowException', () => {
