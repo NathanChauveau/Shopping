@@ -6,14 +6,15 @@ skinparam classAttributeIconSize 0
 'Classes declaration
 class CartItem{
    +CartItem(articleId: int, name: string, quantity: int, price: float)
-   +<get,set>quantity():int
-   +<get>name():string
-   +<get>price():float
+   +get,set quantity():int
+   +getName():string
+   +getPrice():float
 }
 class Cart{
+    -items: CartItem[] = null
     +Cart(cartItems: CartItem[])
-    +<get,set>cartItems():CartItem[]
-    +<get>total():float
+    +get,set cartItems():CartItem[]
+    +getTotal():float
     +count(distinct = false):int
     +add(cartItem: CartItem):void
 }
