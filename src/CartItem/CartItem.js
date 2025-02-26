@@ -21,15 +21,11 @@ module.exports = class CartItem {
     constructor(articleId, name, quantity, price) {
         if (articleId < 1) {
             throw new InvalidArticleIdException();
-        }else if (quantity < 1) {
-            throw new InvalidQuantityException();
-        }else if (price < 10) {
-            throw new InvalidPriceException();
         }
         this._articleId = articleId;
         this._name = name;
-        this._quantity = quantity;
-        this._price = price;
+        this.quantity = quantity;
+        this.price = price;
     }
 
     get articleId() {

@@ -45,26 +45,14 @@ module.exports = class Cart {
         }
 
         if(distinct){
-            let distinctItems = [];
-            this._cartItems.forEach(cartItem => {
-                //if(!distinctItems.includes(cartItem.articleId)){
-                    distinctItems.push(cartItem.articleId);
-                //}
-            });
-            return distinctItems.length;
-        }else{
-            let totalQuantity = 0;
-            this._cartItems.forEach(cartItem => {
-                totalQuantity += cartItem.quantity;
-            });
-            return totalQuantity;
+        const distinctCartItems = new Set(this._cartItems.map(cartItem => cartItem.articleId));
+        return distinctCartItems.size;
         }
+        return this._cartItems.reduce((totalQuantity, cartItem)=> totalQuantity + cartItem.quantity, 0);
     }
 
     add(cartItem) {
-        //if(this._cartItems === null) {
             this._cartItems = [];
-        //}
         if(cartItem === null ) {
             throw new UpdateCartException();
         }
