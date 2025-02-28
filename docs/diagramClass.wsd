@@ -25,6 +25,7 @@ class CartItemException{}
 class InvalidArticleIdException{}
 class InvalidQuantityException{}
 class InvalidPriceException{}
+class InvalidNameException{}
 class EmptyCartException{}
 class UpdateCartException{}
 class CartException{}
@@ -41,6 +42,7 @@ Cart o-- CartItem
 InvalidArticleIdException -|> CartItemException
 InvalidPriceException -|> CartItemException
 InvalidQuantityException -|> CartItemException
+InvalidNameException -|> CartItemException
 CartItemException -|> Error
 EmptyCartException -|> CartException
 UpdateCartException -|> CartException
