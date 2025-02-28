@@ -37,10 +37,15 @@ module.exports = class CartItem {
         return this._quantity;
     }
 
+    get name() {
+        return this._name;
+    }
+
     set name(value) {
         if(value.length < 2) {
             throw new InvalidNameException();
         }
+        this._name = value;
     }
 
     set quantity(value) {
