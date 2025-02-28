@@ -159,3 +159,19 @@ test('name_InvalideName_ThrowException', () => {
     //Exception is thrown
     
     })    
+
+    test('name_setNameNominalCase_NameValueCorrectlySet', () => {
+        //given
+        let articleId = 1;
+        let name = "Iphone 27";
+        let quantity = 10;
+        let price = 20;
+        let cartItem = new CartItem(articleId, name, quantity, price);
+        let expectedName = "Iphone 28";
+        
+        //when
+        cartItem.name = expectedName;
+        
+        //then
+        expect(cartItem.name).toEqual(expectedName);
+    })
