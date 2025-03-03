@@ -159,3 +159,33 @@ test('add_EmptyCartEmptyItemsToAdd_ThrowException', () => {
     //then
     //Exception is thrown
 })
+
+test('count_AddedSingleCartItem_GetsUpdatedNumberOfItems', () => {
+    //given
+    let cart = new Cart(null);
+    let expectedCount = 1;
+    let cartItem1 = new CartItem(1,"Iphone 27",1,10);
+    let items = [cartItem1];
+
+
+    //when 
+    cart.add(items);
+
+    //then
+    expect(cart.count()).toEqual(expectedCount);
+})
+test('count_AddedMultipleCartItemDistinct_GetsUpdatedNumberOfItems', () => {
+    //given
+    let cart = new Cart(null);
+    let expectedCount = 1;
+    let cartItem1 = new CartItem(1,"Iphone 27",1,10);
+    let cartItem2 = new CartItem(1,"Iphone 27",1,10);
+    let items = [cartItem1, cartItem2];
+
+    //when
+    cart.add(items);
+
+    //then
+    expect(cart.count(true)).toEqual(expectedCount);
+
+})

@@ -11,6 +11,7 @@ let CartItem =  require('../src/CartItem/CartItem.js');
 const InvalidArticleIdException = require("../src/CartItem/InvalidArticleIdException.js");
 const InvalidQuantityException = require("../src/CartItem/InvalidQuantityException.js");
 const InvalidPriceException = require("../src/CartItem/InvalidPriceException.js");
+const InvalidNameException = require("../src/CartItem/InvalidNameException.js");
 
 test('constructor_NominalCase_PropertiesGetRightValues', () => {
     //given
@@ -141,3 +142,36 @@ test('price_setPriceInvalidPrice_ThrowException', () => {
     //then
     //Exception is thrown
 })
+
+test('name_InvalideName_ThrowException', () => {
+    //given
+    let articleId = 1;
+    let name = "Iphone 27";
+    let quantity = 10;
+    let price = 20;
+    let cartItem = new CartItem(articleId, name, quantity, price);
+    let invalidName = "O"; //Invalid name, too short (smaller than 2)
+    
+    //when
+    expect(() => cartItem.name = invalidName).toThrow(InvalidNameException);
+    
+    //then
+    //Exception is thrown
+    
+    })    
+
+    test('name_setNameNominalCase_NameValueCorrectlySet', () => {
+        //given
+        let articleId = 1;
+        let name = "Iphone 27";
+        let quantity = 10;
+        let price = 20;
+        let cartItem = new CartItem(articleId, name, quantity, price);
+        let expectedName = "Iphone 28";
+        
+        //when
+        cartItem.name = expectedName;
+        
+        //then
+        expect(cartItem.name).toEqual(expectedName);
+    })

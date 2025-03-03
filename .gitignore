@@ -78,3 +78,32 @@ fabric.properties
 
 # npm
 node_modules/
+coverage/clover.xml
+coverage/coverage-final.json
+coverage/lcov.info
+coverage/lcov-report/base.css
+coverage/lcov-report/block-navigation.js
+coverage/lcov-report/favicon.png
+coverage/lcov-report/index.html
+coverage/lcov-report/prettify.css
+coverage/lcov-report/prettify.js
+coverage/lcov-report/sort-arrow-sprite.png
+coverage/lcov-report/sorter.js
+coverage/lcov-report/Cart/Cart.js.html
+coverage/lcov-report/Cart/CartException.js.html
+coverage/lcov-report/Cart/EmptyCartException.js.html
+coverage/lcov-report/Cart/index.html
+coverage/lcov-report/Cart/UpdateCartException.js.html
+coverage/lcov-report/CartItem/CartItem.js.html
+coverage/lcov-report/CartItem/CartItemException.js.html
+coverage/lcov-report/CartItem/index.html
+coverage/lcov-report/CartItem/InvalidArticleIdException.js.html
+coverage/lcov-report/CartItem/InvalidNameException.js.html
+coverage/lcov-report/CartItem/InvalidPriceException.js.html
+coverage/lcov-report/CartItem/InvalidQuantityException.js.html
+coverage/lcov-report/CartItem.js.html
+coverage/lcov-report/CartItemException.js.html
+coverage/lcov-report/InvalidArticleIdException.js.html
+coverage/lcov-report/InvalidNameException.js.html
+coverage/lcov-report/InvalidPriceException.js.html
+coverage/lcov-report/InvalidQuantityException.js.html
